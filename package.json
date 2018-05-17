@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "description": "element for san",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Sele-frontend/element-san"
+  },
+   "scripts": {
+    "test": "mocha",
+    "start": "webpack",
+    "dev": "webpack-dev-server --open --config webpack.config.js",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [
     "element",
