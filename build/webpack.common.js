@@ -2,14 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
-
 module.exports = {
     mode: NODE_ENV,
     entry: {
-        app: path.resolve(__dirname, './src/index.js'),
+        app: path.resolve(__dirname, '../example/main.js'),
     },
     output: {
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, '../dist/'),
         filename: 'bundle.js',
     },
     module: {
@@ -41,7 +40,7 @@ module.exports = {
                         loader: 'sass-resources-loader',
                         options: {
                             // Provide path to the file with resources
-                            resources: path.resolve(__dirname,'./theme/common.less')
+                            resources: path.resolve(__dirname,'../theme/common.less')
                         },
                     }
                 ]
@@ -59,11 +58,5 @@ module.exports = {
                     ? 'san/dist/san.js'
                     : 'san/dist/san.dev.js',
         },
-    },
-    devtool:"eval-source-map",
-    devServer: {
-        contentBase:"./dist",
-        historyApiFallback:true,
-        inline:true
-    },
+    }
 };

@@ -1,1 +1,1 @@
-test
+import "../theme/common.less";
