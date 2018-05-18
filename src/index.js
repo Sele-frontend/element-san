@@ -1,1 +1,1 @@
-var test = 'test';
+export {default as card} from '../package/card/card.js';
