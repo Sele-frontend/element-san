@@ -16,5 +16,8 @@ element for san (unofficial)
 
 | 组件名 | 进度   | 开发人员 |
 | ------ | ------ | -------- |
-| card   | 开发中 | 崔晋瑜   |
+| datepicker   | 开发中 | 崔晋瑜   |
+| icon  | 开发中  | 徐帅武   |
+| layout | 开发中  | 钱锟    |
+| button | 开发中 | 李彦俊    |
 
