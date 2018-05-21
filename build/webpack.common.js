@@ -1,16 +1,9 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const htmlWebPackPlugin = require('html-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
+const webpack = require('webpack');
+
 module.exports = {
-    mode: NODE_ENV,
-    entry: {
-        app: path.resolve(__dirname, '../example/main.js'),
-    },
-    output: {
-        path: path.resolve(__dirname, '../dist/'),
-        filename: 'bundle.js',
-    },
     module: {
         rules: [
             {
@@ -18,10 +11,31 @@ module.exports = {
                 exclude: [path.resolve(__dirname, './node_modules')],
                 use: 'babel-loader',
             },
+            // image loader
             {
-                // 图片加载器
                 test:/\.(png|jpg|gif|jpeg)$/,
-                use:'url-loader?limit=2048'
+                use:[
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit:100000,
+                                name:path.join("img/[name].[hash].[ext]")
+                            }
+                        }
+                    ]
+            },
+            // font loader
+            {
+                test: /\.(eot|woff|woff2|ttf|svg)(\?\S*)?$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit:100000,
+                            name:path.join("img/[name].[hash].[ext]")
+                        }
+                    }
+                ]
             },
             {
                 test: /\.css$/,
@@ -58,5 +72,17 @@ module.exports = {
                     ? 'san/dist/san.js'
                     : 'san/dist/san.dev.js',
         },
-    }
+    },
+    plugins:[
+        new htmlWebPackPlugin({
+            filename:'index.html',
+            templete:'./index.html',
+            inject:true,
+            title:'index',
+            minify:{
+                removeComments:false
+            }
+        }),
+        new webpack.HotModuleReplacementPlugin()
+    ]
 };

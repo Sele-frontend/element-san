@@ -1,11 +1,12 @@
 // Karma configuration
 // Generated on Fri May 18 2018 00:08:15 GMT+0800 (中国标准时间)
+const webpackConfig = require("../../build/webpack.test");
 
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
 
     // frameworks to use
@@ -59,10 +60,24 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    coverageReporter:{
+      dir:"./coverage",
+      reporters:[
+          { type: 'lcov', subdir: '.' },
+          { type: 'text-summary' }
+      ]
+    },
+
+    webpack:webpackConfig,
+
+    webpackMiddleWare:{
+      noInfo:false
+    }
   })
 }
