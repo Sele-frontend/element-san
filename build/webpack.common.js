@@ -1,5 +1,4 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlWebPackPlugin = require('html-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 const webpack = require('webpack');
@@ -11,7 +10,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname,'../dist/'),
-        filename: '[name]-[hash].js'
+        filename: 'js/[name]-[hash].js'
     },
     module: {
         rules: [
@@ -23,12 +22,28 @@ module.exports = {
             // image loader
             {
                 test:/\.(png|jpg|gif|jpeg)$/,
-                use:'url-loader?limit=100000'
+                use:[
+                        {
+                            loader: 'url-loader',
+                            options: {
+                                limit:100000,
+                                name:path.join("img/[name].[hash].[ext]")
+                            }
+                        }
+                    ]
             },
             // font loader
             {
                 test: /\.(eot|woff|woff2|ttf|svg)(\?\S*)?$/,
-                use: [{loader: 'url-loader'}]
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit:100000,
+                            name:path.join("img/[name].[hash].[ext]")
+                        }
+                    }
+                ]
             },
             {
                 test: /\.css$/,
