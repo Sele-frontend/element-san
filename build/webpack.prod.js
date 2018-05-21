@@ -5,6 +5,13 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = webpackMerge(commonConfig,{
     mode: 'production',
     devtool: 'source-map',
+    entry: {
+        app: path.resolve(__dirname, '../example/main.js'),
+    },
+    output: {
+        path: path.resolve(__dirname,'../dist/'),
+        filename: 'js/[name]-[hash].js'
+    },
     plugins:[
         new UglifyJsPlugin({
             test: /\.js($|\?)/i,

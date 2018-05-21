@@ -4,14 +4,6 @@ const NODE_ENV = process.env.NODE_ENV;
 const webpack = require('webpack');
 
 module.exports = {
-    mode: NODE_ENV,
-    entry: {
-        app: path.resolve(__dirname, '../example/main.js'),
-    },
-    output: {
-        path: path.resolve(__dirname,'../dist/'),
-        filename: 'js/[name]-[hash].js'
-    },
     module: {
         rules: [
             {

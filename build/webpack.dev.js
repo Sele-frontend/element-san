@@ -4,24 +4,15 @@ const path = require("path");
 
 module.exports = webpackMerge(commonConfig,{
         mode: 'development',
-
+        entry: {
+            app: path.resolve(__dirname, '../example/main.js'),
+        },
+        output: {
+            path: path.resolve(__dirname,'../dist/'),
+            filename: 'js/[name]-[hash].js'
+        },
         devtool: 'source-map',
 
-        rules:[
-            {
-                //利用istanbul进行单元测试
-                test: /\.(js)$/,
-                exclude: /node_modules/,
-                include: /src|packages/,
-                enforce: 'post',
-                use: [{
-                    loader: "istanbul-instrumenter-loader",
-                    options: {
-                        esModules: true
-                    },
-                }]
-            },
-        ],
         devServer: {
             contentBase:path.resolve(__dirname,"../dist"),
             historyApiFallback:true,
