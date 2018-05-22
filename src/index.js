@@ -1,1 +1,1 @@
-export {default as card} from '../package/card/card.js';
+export {default as card} from '../package/card/src/card.js';
