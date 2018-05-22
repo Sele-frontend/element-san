@@ -62,6 +62,11 @@ module.exports = {
             {
                 test:/\.san$/,
                 use:'san-loader'
+            },
+            {
+                test: /\.html$/,
+                exclude: /node_modules/,
+                use: [ 'html-loader' ]
             }
         ],
     },
@@ -76,7 +81,7 @@ module.exports = {
     plugins:[
         new htmlWebPackPlugin({
             filename:'index.html',
-            templete:'./index.html',
+            template:'./build/index.html',
             inject:true,
             title:'index',
             minify:{
