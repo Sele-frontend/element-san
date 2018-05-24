@@ -10,6 +10,7 @@ element for san (unofficial)
 | 崔晋瑜 | https://github.com/cuijinyu   |
 | 李彦俊 | https://github.com/yanjun0501 |
 | 钱锟   | https://github.com/hmqk1995   |
+| 刘放 | https://github.com/yuedou      |
 | 徐帅武 | https://github.com/xluos      |
 
 ## 开发进度
