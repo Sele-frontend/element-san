@@ -8,6 +8,12 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
+                enforce: 'pre',
+                loader: require.resolve('eslint-loader'),
+                include: path.resolve(__dirname, '../src/index.js'),
+            },
+            {
+                test: /\.js$/,
                 exclude: [path.resolve(__dirname, './node_modules')],
                 use: 'babel-loader',
             },
