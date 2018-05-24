@@ -1,0 +1,30 @@
+@import 'common/var';
+
+.el-card{
+  border-radius:@border-radius-base;
+  border:@border-base;
+  color:@color-text-primary;
+  overflow: hidden;
+  background:@color-white;
+  transition:0.3s;
+}
+
+.is-always-shadow{
+  box-shadow: @box-shadow-base;
+}
+
+.is-hover-shadow{
+  &:hover,
+  &:focus{
+    box-shadow:@box-shadow-base;
+  }
+}
+
+.el-card__header{
+  padding: @card-padding - 2 @card-padding;
+  border-bottom: 1px solid @card-border-color;
+}
+
+.el-card__body{
+  padding: @card-padding;
+}

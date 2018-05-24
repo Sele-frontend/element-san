@@ -1,1 +1,3 @@
-import Card from './src/card';
+import elCard from './src/card';
+
+export default elCard;
