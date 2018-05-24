@@ -20,6 +20,7 @@ element for san (unofficial)
 | datepicker   | 开发中 | 崔晋瑜   |
 | icon  | 完成  | 徐帅武   |
 | layout | 开发中  | 钱锟    |
-| button | 开发中 | 李彦俊    |
-|  card | 完成   |  崔晋瑜    |
+| button | 开发中 | 李彦俊   |
+|  card | 完成   |  崔晋瑜   |
+| input  | 开发中 | 崔晋瑜  |
 
