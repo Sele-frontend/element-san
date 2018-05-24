@@ -1,4 +1,5 @@
-//colors
+/* color
+-------------------------- */
 @color-white:#fff;
 @color-black:#000;
 @color-primary: #409EFF;
@@ -32,6 +33,40 @@
 @color-text-secondary: #909399;
 @color-text-placeholder: #c0c4cc;
 
+
+/* Link
+-------------------------- */
+@link-color: @color-primary-light-2;
+@link-hover-color: @color-primary;
+
+/* Background
+-------------------------- */
+@background-color-base: #f5f7fa;
+
+/* Border
+-------------------------- */
+@border-width-base: 1px;
+@border-style-base: solid;
+@border-color-base: #dcdfe6;
+@border-color-light: #e4e7ed;
+@border-color-lighter: #ebeef5;
+@border-color-extra-light: #f2f6fc;
+@border-color-hover: @color-text-placeholder;
+@border-base: @border-width-base @border-style-base @border-color-base;
+@border-radius-base: 4px;
+@border-radius-small: 2px;
+@border-radius-circle: 100%;
+
+/* Box-shadow
+-------------------------- */
+@box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+@box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
+@box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+/* Fill
+-------------------------- */
+@fill-base: @color-white;
+
 /* Font
 -------------------------- */
 @font-path: 'fonts';
@@ -41,3 +76,26 @@
 @font-color-disabled-base: #bbb;
 @font-weight-primary: 500;
 @font-line-height-primary: 24px;
+
+/* Size
+-------------------------- */
+@size-base: 14px;
+
+/* z-index
+-------------------------- */
+@index-normal: 1;
+@index-top: 1000;
+@index-popper: 2000;
+
+/* Disable base
+-------------------------- */
+@disabled-fill-base: @background-color-base;
+@disabled-color-base: @color-text-placeholder;
+@disabled-border-base: @border-color-light;
+
+
+/* Card
+--------------------------*/
+@card-border-color: @border-color-lighter;
+@card-border-radius: 4px;
+@card-padding: 20px;
