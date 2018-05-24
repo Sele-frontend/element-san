@@ -1,4 +1,9 @@
 # CHANGELOG
+## 0.0.5 2018.5.24 18：00 By yanjun
+
+- 新增了button组件
+- 新增了eslint
+
 ## 0.0.4 2018.5.24 9.07 By Cuijinyu and xluos
 
 - 新增了icon组件
