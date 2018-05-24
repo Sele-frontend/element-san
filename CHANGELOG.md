@@ -1,4 +1,11 @@
 # CHANGELOG
+## 0.0.4 2018.5.24 9.07 By Cuijinyu and xluos
+
+- 新增了icon组件
+- 新增了card组件
+- 更正了目录结构
+- 增加了新的样式变量
+
 ## 0.0.3 2018.5.22 20.34 By Cuijinyu
 
 - 测试了less样式
