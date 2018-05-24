@@ -1,7 +1,7 @@
 # Card组件
 
 ## usage:
-```
+```js
 import elCard from '../package/card/index.js';
 
 在父组件内:
