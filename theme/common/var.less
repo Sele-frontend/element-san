@@ -1,3 +1,12 @@
+/* Transition
+-------------------------- */
+@all-transition: all .3s cubic-bezier(.645,.045,.355,1);
+@fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+@fade-linear-transition: opacity 200ms linear;
+@md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+@border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1);
+@color-transition-base: color .2s cubic-bezier(.645,.045,.355,1);
+
 /* color
 -------------------------- */
 @color-white:#fff;
@@ -105,3 +114,41 @@
 @standard-button: 5px;
 @lovely-button: 20px;
 @circle-button: 50%;
+
+
+/* Input
+-------------------------- */
+@input-font-size: @font-size-base;
+@input-color: @color-text-regular;
+@input-width: 140px;
+@input-height: 40px;
+@input-border: @border-base;
+@input-border-color: @border-color-base;
+@input-border-radius: @border-radius-base;
+@input-border-color-hover: @border-color-hover;
+@input-fill: @color-white;
+@input-fill-disabled: @disabled-fill-base;
+@input-color-disabled: @font-color-disabled-base;
+@input-icon-color: @color-text-placeholder;
+@input-placeholder-color: @color-text-placeholder;
+@input-max-width: 314px;
+
+@input-hover-border: @border-color-hover;
+@input-clear-hover-color: @color-text-secondary;
+
+@input-focus-border: @color-primary;
+@input-focus-fill: @color-white;
+
+@input-disabled-fill: @disabled-fill-base;
+@input-disabled-border: @disabled-border-base;
+@input-disabled-color: @disabled-color-base;
+@input-disabled-placeholder-color: @color-text-placeholder;
+
+@input-medium-font-size: 14px;
+@input-medium-height: 36px;
+
+@input-small-font-size: 13px;
+@input-small-height: 32px;
+
+@input-mini-font-size: 12px;
+@input-mini-height: 28px;

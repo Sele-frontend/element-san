@@ -2,6 +2,8 @@ import "../theme/common/common.less";
 import elCard from '../package/card/index.js';
 import elIcon from '../package/icon/index.js';
 import elButton from '../package/button/index.js';
+import elInput from '../package/input/index';
+
 import san from 'san';
 
 let MyApp = san.defineComponent({
@@ -15,11 +17,15 @@ let MyApp = san.defineComponent({
                 <el-button type="standard">按钮</el-button>
                 <el-button type="lovely" color="red">按钮</el-button>
                 <el-button type="circle" color="#233352">嘤</el-button>
+                <el-input>
+                    div.
+                </el-input>
             </div>`,
     components:{
         'el-card': elCard,
         'el-icon': elIcon,
         'el-button': elButton,
+        'el-input':elInput
     },
     initData(){
         return {

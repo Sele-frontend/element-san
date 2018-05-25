@@ -2,7 +2,7 @@
   "name": "element-san",
   "version": "0.0.1",
   "description": "element for san",
-  "main": "index.js",
+  "main": "./package/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/Sele-frontend/element-san"
@@ -27,6 +27,7 @@
     "babel-preset-es2017": "^6.24.1",
     "chai": "^4.1.2",
     "css-loader": "^0.28.11",
+    "eslint-loader": "^2.0.0",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
