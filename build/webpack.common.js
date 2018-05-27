@@ -1,5 +1,4 @@
 const path = require('path');
-const htmlWebPackPlugin = require('html-webpack-plugin');
 const NODE_ENV = process.env.NODE_ENV;
 const webpack = require('webpack');
 
@@ -85,15 +84,6 @@ module.exports = {
         },
     },
     plugins:[
-        new htmlWebPackPlugin({
-            filename:'index.html',
-            template:'./build/index.html',
-            inject:true,
-            title:'index',
-            minify:{
-                removeComments:false
-            }
-        }),
         new webpack.HotModuleReplacementPlugin()
     ]
 };

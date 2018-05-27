@@ -1,8 +1,9 @@
 {
   "name": "element-san",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "element for san",
-  "main": "./package/index.js",
+  "main": "./dist/element-san.min.js",
+  "email": "c2510271615@gmail.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/Sele-frontend/element-san"
@@ -28,10 +29,12 @@
     "chai": "^4.1.2",
     "css-loader": "^0.28.11",
     "eslint-loader": "^2.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "istanbul": "^0.4.5",
+    "mini-css-extract-plugin": "^0.4.0",
     "mocha": "^5.1.1",
     "san": "^3.5.9",
     "san-loader": "^0.0.7",

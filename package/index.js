@@ -2,10 +2,13 @@ import elButton from './button/index';
 import elIcon from './icon/index';
 import elCard from './card/index';
 import elInput from './input/index';
+import "../theme/common/common.less";
 
-export default {
+let elementSan = {
     elButton,
     elIcon,
     elCard,
-    elInput,
+    elInput
 }
+
+export default elementSan;

@@ -1,5 +1,6 @@
 const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common');
+const htmlWebPackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
 module.exports = webpackMerge(commonConfig,{
@@ -22,5 +23,17 @@ module.exports = webpackMerge(commonConfig,{
             watchOptions: {
                 ignored: /node_modules/
             }
-       }
+       },
+
+    plugins:[
+        new htmlWebPackPlugin({
+            filename:'index.html',
+            template:'./build/index.html',
+            inject:true,
+            title:'index',
+            minify:{
+                removeComments:false
+            }
+        }),
+    ]
 })
