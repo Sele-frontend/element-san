@@ -1,4 +1,8 @@
 # CHANGELOG
+## 0.0.7 2018.5.28 22：13 By Cuijinyu
+
+- 进一步完善了input组件
+
 ## 0.0.5 2018.5.24 18：00 By yanjun
 
 - 新增了button组件

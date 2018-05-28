@@ -23,4 +23,5 @@ element for san (unofficial)
 | button | 开发中 | 李彦俊   |
 |  card | 完成   |  崔晋瑜   |
 | input  | 开发中 | 崔晋瑜  |
+| radio |  开发中 | 徐帅武  |
 
