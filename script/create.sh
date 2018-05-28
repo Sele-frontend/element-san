@@ -29,3 +29,5 @@ cd ../../../theme
 touch $1.less
 
 echo "@import 'common/var';">$1.less
+
+echo "Create the component $1 successful"

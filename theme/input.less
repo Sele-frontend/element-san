@@ -1,42 +1,104 @@
 
-.el_input{
-  position: relative;
-  font-size: @font-size-base;
-  display: inline-block;
-  width: 100%;
+//have some problem , use the important as a temporary approach
+//--------------------------------------------------------------
+.is-small {
+  height: @input-small-height !important;
+  line-height: @input-small-height !important;;
+  .el-input__prefix{
+    top:@input-small-height;
+    height:@input-small-height;
+  }
+
+  .el-input__suffix{
+    top:@input-small-height;
+    height:@input-small-height;
+  }
+
+  .el-input__inner{
+    margin-left:50px;
+  }
+}
+.is-mini {
+  height: @input-mini-height !important;
+  line-height: @input-mini-height !important;;
+  .el-input__prefix{
+    top:@input-mini-height - 5px;
+    height:@input-mini-height;
+  }
+
+  .el-input__suffix{
+    top:@input-mini-height - 5px;
+    height:@input-mini-height;
+  }
+
+  .el-input__inner{
+    margin-left:50px;
+  }
+}
+.is-medium{
+  height: @input-medium-height !important;
+  line-height: @input-medium-height !important;;
+  .el-input__prefix {
+    top:@input-medium-height;
+    height:@input-medium-height;
+  }
+
+  .el-input__suffix {
+    top:@input-medium-height;
+    height:@input-medium-height;
+  }
+
+  .el-input__inner{
+    margin-left:50px;
+  }
 }
 
-.el_input__inner{
-  -webkit-appearance: none;
-  background-color: @input-fill;
-  background-image: none;
-  border-radius: @input-border-radius;
-  border: @input-border;
-  box-sizing: border-box;
-  color: @input-color;
-  display: inline-block;
-  font-size: inherit;
-  height: @input-height;
-  line-height: @input-height;
-  outline: none;
-  padding: 0 15px;
-  transition: @border-transition-base;
-  width: 100%;
-
-  &::placeholder {
-    color: @input-placeholder-color;
+.is-normal {
+  height: @input-height !important;
+  .el-input__prefix {
+    top:@input-height;
   }
 
-  &:hover {
-    border-color: @input-hover-border;
+  .el-input__inner{
+    margin-left:50px;
   }
-
-  &:focus {
-    outline: none;
-    border-color: @input-focus-border;
-  }
-
 }
+
+
+.el-input--small {
+  font-size: @input-small-font-size !important;
+}
+
+
+.el-input--small .el-input__icon {
+  line-height: @input-small-height !important;
+}
+
+.el-input--medium {
+  font-size: @input-medium-font-size !important;
+}
+
+.el-input--medium{
+  height: @input-medium-height !important;
+}
+
+.el-input--medium .el-input__icon{
+  line-height: @input-medium-height !important;
+}
+
+.el-input--mini {
+  font-size: @input-mini-font-size !important;
+}
+
+.el-input--mini {
+  height: @input-mini-height !important;
+}
+
+.el-input--mini .el-input__icon {
+  line-height: @input-mini-height !important;
+}
+
+//--------------------------------------------------------------
 
 .el-input__inner__suffix{
   position: absolute;
@@ -90,6 +152,16 @@
     outline: none;
     border-color:@input-focus-border;
   }
+
+  &:disabled {
+    background-color: @input-disabled-fill;
+    border-color: @input-disabled-border;
+    color: @input-disabled-color;
+    cursor: not-allowed;
+    &::placeholder {
+      color:@input-disabled-placeholder-color;
+    }
+  }
 }
 
 /** disalbe default clear on IE */
@@ -97,4 +169,95 @@
   display: none;
   width: 0;
   height: 0;
+}
+
+.el_input--prefix .el-input__inner {
+    position:relative;
+    left:50px;
+}
+
+.el-input__prefix,.el-input__suffix {
+  max-width:30px;
+  position: relative;
+  -webkit-transition: all .3s;
+  text-align: center;
+  height: 100%;
+  color: #b4bccc
+}
+
+.el-input__suffix {
+  float: right;
+}
+
+.el_input{
+  position: relative;
+  font-size: @font-size-base;
+  display: inline-block;
+  width: 100%;
+  z-index: 10;
+  .el_input__inner{
+    z-index: 10;
+    -webkit-appearance: none;
+    background-color: @input-fill;
+    background-image: none;
+    border-radius: @input-border-radius;
+    border: @input-border;
+    box-sizing: border-box;
+    color: @input-color;
+    display: inline-block;
+    font-size: inherit;
+    height: @input-height;
+    line-height: @input-height;
+    outline: none;
+    padding: 0 15px;
+    transition: @border-transition-base;
+    width: 100%;
+
+    &::placeholder {
+      color: @input-placeholder-color;
+    }
+
+    &:hover {
+      border-color: @input-hover-border;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: @input-focus-border;
+    }
+
+    &:disabled{
+      background-color: @input-disabled-fill;
+      border-color: @input-disabled-border;
+      color: @input-disabled-color;
+      cursor: not-allowed;
+      &::placeholder{
+        color:@input-disabled-placeholder-color;
+      }
+      .el-input__icon{
+        cursor:not-allowed;
+      }
+    }
+
+  }
+
+}
+
+
+//
+.el-input__icon {
+  height: 100%;
+  width: 25px;
+  text-align: center;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  line-height: 40px
+}
+
+.el-input__icon:after {
+  content: '';
+  height: 100%;
+  width: 0;
+  display: inline-block;
+  vertical-align: middle
 }

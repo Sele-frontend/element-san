@@ -19,14 +19,14 @@ let MyApp = san.defineComponent({
                 <el-button type="standard">按钮</el-button>
                 <el-button type="lovely" color="red">按钮</el-button>
                 <el-button type="circle" color="#233352">嘤</el-button>
-                <el-input disabled placeholder="我是一个测试">
+                <el-input  placeholder="我是一个测试" size="small" suffixFlag="true" prefixIcon="search">
                 </el-input>
             </div>`,
     components:{
-        'el-card': elementSan.elCard,
-        'el-icon': elementSan.elIcon,
-        'el-button': elementSan.elButton,
-        'el-input': elementSan.elInput
+        'el-card': elCard,
+        'el-icon': elIcon,
+        'el-button': elButton,
+        'el-input': elInput
     },
     initData(){
         return {
