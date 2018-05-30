@@ -1,66 +1,60 @@
 
 //have some problem , use the important as a temporary approach
 //--------------------------------------------------------------
+.el-input--suffix{
+  .el_input__inner{
+    padding-right:20px !important;
+  }
+}
+.el-input--prefix{
+  .el_input__inner{
+    padding-left:20px !important;
+  }
+}
 .is-small {
-  height: @input-small-height !important;
-  line-height: @input-small-height !important;;
-  .el-input__prefix{
-    top:@input-small-height;
-    height:@input-small-height;
+  .el-input__prefix,.el-input__suffix{
+    line-height: @input-small-height;
   }
-
-  .el-input__suffix{
-    top:@input-small-height;
-    height:@input-small-height;
-  }
-
-  .el-input__inner{
-    margin-left:50px;
+  .el_input__inner{
+    position: relative;
+    height: @input-small-height !important;
+    line-height: @input-small-height !important;
+    bottom:@input-small-height + 3px;
   }
 }
 .is-mini {
-  height: @input-mini-height !important;
-  line-height: @input-mini-height !important;;
-  .el-input__prefix{
-    top:@input-mini-height - 5px;
-    height:@input-mini-height;
+  .el-input__prefix,.el-input__suffix{
+    line-height: @input-mini-height;
+  }
+  .el_input__inner{
+    position: relative;
+    height: @input-mini-height !important;
+    line-height: @input-mini-height !important;
+    bottom:@input-mini-height + 4px;
   }
 
-  .el-input__suffix{
-    top:@input-mini-height - 5px;
-    height:@input-mini-height;
-  }
-
-  .el-input__inner{
-    margin-left:50px;
-  }
 }
 .is-medium{
-  height: @input-medium-height !important;
-  line-height: @input-medium-height !important;;
-  .el-input__prefix {
-    top:@input-medium-height;
-    height:@input-medium-height;
+  .el-input__prefix,.el-input__suffix{
+    line-height: @input-medium-height;
+  }
+  .el_input__inner{
+    position: relative;
+    height: @input-medium-height !important;
+    line-height: @input-medium-height !important;
+    bottom:@input-medium-height;
   }
 
-  .el-input__suffix {
-    top:@input-medium-height;
-    height:@input-medium-height;
-  }
-
-  .el-input__inner{
-    margin-left:50px;
-  }
 }
 
 .is-normal {
-  height: @input-height !important;
-  .el-input__prefix {
-    top:@input-height;
+  .el-input__prefix,.el-input__suffix{
+    line-height: @input-height;
   }
-
-  .el-input__inner{
-    margin-left:50px;
+  .el_input__inner{
+    position: relative;
+    height: @input-height !important;
+    bottom:@input-height;
   }
 }
 
@@ -177,6 +171,7 @@
 }
 
 .el-input__prefix,.el-input__suffix {
+  z-index: 11;
   max-width:30px;
   position: relative;
   -webkit-transition: all .3s;
@@ -189,7 +184,7 @@
   float: right;
 }
 
-.el_input{
+.el-input{
   position: relative;
   font-size: @font-size-base;
   display: inline-block;
