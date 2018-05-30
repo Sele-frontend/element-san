@@ -60,3 +60,7 @@ typings/
 
 # build files
 dist/
+
+# IDE config
+.idea/
+

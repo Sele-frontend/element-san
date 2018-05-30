@@ -5,7 +5,7 @@ import slotUtil from '../../../src/util/slotUtil';
 export default defineComponent({
 
     template:`
-        <div class="el-input {{prefixFlag?'el-input--prefix',''}} {{suffixFlag?'el-input--suffix',''}} is-{{size}}">
+        <div class="el-input {{prefixFlag?'el-input--prefix':''}} {{suffixFlag?'el-input--suffix':''}} is-{{size}}">
             <div s-if="!textarea">
                 <div class="el-input-group__prepend" s-if="prependFlag">
                     <slot name="prepend"></slot>
