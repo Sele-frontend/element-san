@@ -1,0 +1,171 @@
+@import 'common/var';
+.el-input-number__decrease,.el-input-number__increase {
+  z-index: 12;
+  width:20%;
+  position: relative;
+  background: rgb(247,249,250);
+  border-radius:@input-border-radius;
+  border:@input-border;
+  height: 100%;
+  transition:@all-transition;
+}
+
+.is-number-mini{
+  .el-input-number__decrease {
+    position:relative;
+    bottom:4px;
+    float: left;
+    vertical-align: center;
+    height: @input-mini-height - 2px;
+    i{
+      line-height: @input-mini-height;
+    }
+  }
+  .el-input-number__increase {
+    float: right;
+    position:relative;
+    vertical-align: center;
+    bottom:2 * @input-mini-height + 4px;
+    height: @input-mini-height - 2px;
+    i{
+      line-height: @input-mini-height;
+    }
+  }
+
+
+  &:hover {
+    .el_input__inner {
+      border-color:@input-focus-border;
+    }
+    .el-input-number__decrease {
+      border-color:@input-focus-border;
+      border-right-color:@input-border-color;
+    }
+    .el-input-number__increase {
+      border-color:@input-focus-border;
+      border-left-color:@input-border-color;
+    }
+  }
+}
+
+.is-number-small {
+  .el-input-number__decrease {
+    float: left;
+    height: @input-height - 2px;
+    i{
+      line-height: @input-height;
+    }
+  }
+  .el-input-number__increase {
+    float: right;
+    position:relative;
+    bottom:2 * @input-small-height;
+    height: @input-small-height - 2px;
+    i{
+      line-height: @input-small-height;
+    }
+  }
+
+  &:hover {
+    .el_input__inner {
+      border-color:@input-focus-border;
+    }
+    .el-input-number__decrease {
+      border-color:@input-focus-border;
+      border-right-color:@input-border-color;
+    }
+    .el-input-number__increase {
+      border-color:@input-focus-border;
+      border-left-color:@input-border-color;
+    }
+  }
+}
+
+.is-number-normal{
+  .el-input-number__decrease {
+    float: left;
+    height: @input-height - 2px;
+    i{
+      line-height: @input-height;
+    }
+  }
+  .el-input-number__increase {
+    float: right;
+    position:relative;
+    bottom:2 * @input-height;
+    height: @input-height - 2px;
+    i{
+      line-height: @input-height;
+    }
+  }
+
+  &:hover {
+    .el_input__inner {
+      border-color:@input-focus-border;
+    }
+    .el-input-number__decrease {
+      border-color:@input-focus-border;
+      border-right-color:@input-border-color;
+    }
+    .el-input-number__increase {
+      border-color:@input-focus-border;
+      border-left-color:@input-border-color;
+    }
+  }
+}
+
+
+.is-number-medium{
+  .el-input-number__decrease {
+    float: left;
+    height: @input-medium-height - 2px;
+    i{
+      line-height: @input-medium-height;
+    }
+  }
+  .el-input-number__increase {
+    float: right;
+    position:relative;
+    bottom:2 * @input-medium-height;
+    height: @input-medium-height - 2px;
+    i{
+      line-height: @input-medium-height;
+    }
+  }
+
+  &:hover {
+    .el_input__inner {
+      border-color:@input-focus-border;
+    }
+    .el-input-number__decrease {
+      border-color:@input-focus-border;
+      border-right-color:@input-border-color;
+    }
+    .el-input-number__increase {
+      border-color:@input-focus-border;
+      border-left-color:@input-border-color;
+    }
+  }
+}
+
+
+.el-input-number__decrease {
+  float: left;
+  i{
+    width: 16px;
+    position:relative;
+    left:calc(50% - 8px);
+  }
+}
+.el-input-number__increase {
+  float: right;
+  i{
+    width: 16px;
+    position:relative;
+    left:calc(50% - 8px);
+  }
+}
+
+.disabled {
+  color:@input-disabled-color;
+}

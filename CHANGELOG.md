@@ -1,4 +1,8 @@
 # CHANGELOG
+## 0.0.9 2018.5.31 21:51 By Cuijinyu
+
+- 大致完成了input-number组件，还没有完成精度部分
+
 ## 0.0.7 2018.5.28 22：13 By Cuijinyu
 
 - 进一步完善了input组件

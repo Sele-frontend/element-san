@@ -4,13 +4,13 @@ export default defineComponent({
     template:`
             <div style="background: {{color}}" 
                  class="el-button el-button_{{type}}"
-                 onclick="handleClick(e)"
-                 onhover="handleHover(e)"
-                 onfocus="handleFocus(e)"
-                 onblur="handleBlur(e)">
+                 on-click="handleClick(e)"
+                 on-hover="handleHover(e)"
+                 on-focus="handleFocus(e)"
+                 on-blur="handleBlur(e)">
                 <span class="el-button_content">
                     <slot>
-                    
+                       
                     </slot>
                 </span>
             </div>
