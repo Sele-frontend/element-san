@@ -12,17 +12,16 @@ const getPrecision = function (value) {
         precision =  valueString.length - dotPosition - 1;
     }
     return precision;
-}
+};
 
 const toPrecision = function (value, precision) {
     return parseFloat(parseFloat(Number(value).toFixed(precision)));
-}
+};
 
 export default defineComponent({
 
     template:`
         <div class="is-number-{{size}}">
-            <div></div>
             <div class="el-input-number__decrease 
                         {{value==min?'disabled':''}}" 
                         on-click="sub(step)" 
@@ -54,7 +53,6 @@ export default defineComponent({
                         s-if="precisionMode">
                 <i class="el-icon-plus"></i>
             </div>
-            <div></div>
         </div>
     `,
     initData () {

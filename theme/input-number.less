@@ -11,6 +11,11 @@
 }
 
 .is-number-mini{
+  &:after {
+    content:'';
+    display:block;
+    clear:both;
+  }
   .el-input-number__decrease {
     position:relative;
     bottom:4px;
@@ -49,6 +54,11 @@
 }
 
 .is-number-small {
+  &:after {
+    content:'';
+    display:block;
+    clear:both;
+  }
   .el-input-number__decrease {
     float: left;
     height: @input-height - 2px;
@@ -83,6 +93,11 @@
 
 .is-number-normal{
   height:@input-height;
+  &:after {
+    content:'';
+    display:block;
+    clear:both;
+  }
   .el-input-number__decrease {
     float: left;
     height: @input-height - 2px;
@@ -117,6 +132,11 @@
 
 
 .is-number-medium{
+  &:after {
+    content:'';
+    display:block;
+    clear:both;
+  }
   .el-input-number__decrease {
     float: left;
     height: @input-medium-height - 2px;

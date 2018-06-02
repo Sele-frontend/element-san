@@ -1,6 +1,6 @@
 // Karma configuration
 // Generated on Fri May 18 2018 00:08:15 GMT+0800 (中国标准时间)
-const webpackConfig = require("../../build/webpack.test");
+const webpackConfig = require("../../build/webpack.test.js");
 
 module.exports = function(config) {
   config.set({
@@ -11,7 +11,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha'],
+    frameworks: ['mocha', 'chai'],
 
 
     // list of files / patterns to load in the browser
@@ -19,6 +19,9 @@ module.exports = function(config) {
         "specs/*.spec.js"
     ],
 
+    preprocessors: {
+      "./speces/*.spec.js":['babel']
+    },
 
     // list of files / patterns to exclude
     exclude: [
@@ -74,7 +77,6 @@ module.exports = function(config) {
           { type: 'text-summary' }
       ]
     },
-
     webpack:webpackConfig,
 
     webpackMiddleWare:{
