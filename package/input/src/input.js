@@ -10,7 +10,7 @@ export default defineComponent({
                     {{suffixFlag?'el-input--suffix':''}} 
                     {{numberFlag?'el-input--number':''}}
                     is-{{size}}">
-            <div s-if="!textarea">
+            <div s-if="!textarea" class="el-input--inner">
                 <div class="el-input-group__prepend" s-if="prependFlag">
                     <slot name="prepend"></slot>
                 </div>

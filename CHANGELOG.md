@@ -1,4 +1,8 @@
 # CHANGELOG
+## 0.0.9-1 2018.6.2 16:01 By Cuijinyu
+
+- 改善了input和input-number的样式
+
 ## 0.0.9 2018.5.31 21:51 By Cuijinyu
 
 - 大致完成了input-number组件，还没有完成精度部分

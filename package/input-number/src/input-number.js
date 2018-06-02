@@ -22,6 +22,7 @@ export default defineComponent({
 
     template:`
         <div class="is-number-{{size}}">
+            <div></div>
             <div class="el-input-number__decrease 
                         {{value==min?'disabled':''}}" 
                         on-click="sub(step)" 
@@ -53,6 +54,7 @@ export default defineComponent({
                         s-if="precisionMode">
                 <i class="el-icon-plus"></i>
             </div>
+            <div></div>
         </div>
     `,
     initData () {

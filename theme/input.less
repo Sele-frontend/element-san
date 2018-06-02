@@ -18,6 +18,10 @@
   }
 }
 .is-small {
+  height:@input-small-height;
+  .el-input--inner{
+    height: @input-small-height;
+  }
   .el-input__prefix,.el-input__suffix{
     line-height: @input-small-height;
   }
@@ -29,6 +33,10 @@
   }
 }
 .is-mini {
+  height: @input-mini-height;
+  .el-input--inner{
+    height: @input-mini-height;
+  }
   .el-input__prefix,.el-input__suffix{
     line-height: @input-mini-height;
   }
@@ -41,6 +49,10 @@
 
 }
 .is-medium{
+  height: @input-medium-height;
+  .el-input--inner{
+    height: @input-medium-height;
+  }
   .el-input__prefix,.el-input__suffix{
     line-height: @input-medium-height;
   }
@@ -54,6 +66,10 @@
 }
 
 .is-normal {
+  height: @input-height;
+  .el-input--inner{
+    height: @input-height;
+  }
   .el-input__prefix,.el-input__suffix{
     line-height: @input-height;
   }
@@ -193,7 +209,7 @@
 .el-input{
   position: relative;
   font-size: @font-size-base;
-  display: inline-block;
+  //display: inline-block;
   width: 100%;
   z-index: 10;
   .el_input__inner{
