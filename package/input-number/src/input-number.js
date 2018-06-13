@@ -118,7 +118,7 @@ export default defineComponent({
         let tempValue = (precisionFactor * n + precisionFactor * value) / precisionFactor;
         tempValue = toPrecision(tempValue, precision).toString();
         if (tempValue.length < parseInt(precision) + 2) {
-            for(let i = tempValue.length;i < parseInt(precision) + 2;i++){
+            for (let i = tempValue.length;i < parseInt(precision) + 2;i++) {
                 tempValue += '0';
             }
         }
