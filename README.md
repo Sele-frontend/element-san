@@ -1,6 +1,8 @@
 # element-san
 
 element for san (unofficial)
+----------------------------------------
+![](https://www.travis-ci.org/Sele-frontend/element-san.svg?branch=master)
 
 --------------------------------------
 ## 开发人员（按照拼音顺序排序）：
