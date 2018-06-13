@@ -21,7 +21,7 @@ const toPrecision = function (value, precision) {
 export default defineComponent({
 
     template:`
-        <div class="is-number-{{size}}">
+        <div class="is-number-{{size}} {{disabled?'el-input-number--disabled':''}}">
             <div class="el-input-number__decrease 
                         {{value==min?'disabled':''}}" 
                         on-click="sub(step)" 
@@ -64,12 +64,13 @@ export default defineComponent({
             max:null,
             precisionMode:false,
             precision:2,    //  精度默认为2
+            disabled:false, //  是否不可用
         };
     },
     created () {
         this.watch('value', function (value) {
             const max = this.data.get('max'),
-                min = this.data.get('min')
+                min = this.data.get('min');
             if (value <= min) {
                 this.data.set('value', min);
             }
@@ -110,21 +111,31 @@ export default defineComponent({
         this.data.set('value', value - n);
     },
     addPrecision (n) {
-        const value = this.data.get('value');
+        const value = parseFloat(this.data.get('value'));
         const precision = this.data.get('precision');
         const precisionFactor = Math.pow(10, precision);
         n = parseFloat(n);
         let tempValue = (precisionFactor * n + precisionFactor * value) / precisionFactor;
-        tempValue = toPrecision(tempValue, precision);
+        tempValue = toPrecision(tempValue, precision).toString();
+        if (tempValue.length < parseInt(precision) + 2) {
+            for(let i = tempValue.length;i < parseInt(precision) + 2;i++){
+                tempValue += '0';
+            }
+        }
         this.data.set('value', tempValue);
     },
     subPrecision (n) {
-        const value = this.data.get('value');
+        const value = parseFloat(this.data.get('value'));
         const precision = this.data.get('precision');
         const precisionFactor = Math.pow(10, precision);
         n = parseFloat(n);
         let tempValue = (precisionFactor * value - precisionFactor * n) / precisionFactor;
-        tempValue = toPrecision(tempValue, precision);
+        tempValue = toPrecision(tempValue, precision).toString();
+        if (tempValue.length < parseInt(precision) + 2) {
+            for(let i = tempValue.length;i < parseInt(precision) + 2;i++){
+                tempValue += '0';
+            }
+        }
         this.data.set('value', tempValue);
     },
     handleClick (e) {

@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Fri May 18 2018 00:08:15 GMT+0800 (中国标准时间)
 const webpackConfig = require("../../build/webpack.test.js");
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = function(config) {
   config.set({
@@ -16,17 +18,28 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        "specs/*.spec.js"
+        "./specs/*.spec.js"
     ],
 
     preprocessors: {
-      "./speces/*.spec.js":['babel']
+      "./specs/*.spec.js":['babel']
     },
 
     // list of files / patterns to exclude
     exclude: [
     ],
-
+      babelPreprocessor: {
+          options: {
+              presets: ['env'],
+              sourceMap: 'inline'
+          },
+          filename: function (file) {
+              return file.originalPath.replace(/\.js$/, '.es5.js');
+          },
+          sourceFileName: function (file) {
+              return file.originalPath;
+          }
+      },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -72,9 +85,18 @@ module.exports = function(config) {
       ]
     },
     webpack:webpackConfig,
-
-    webpackMiddleWare:{
-      noInfo:false
-    }
+    webpackServer: {
+              noInfo: true
+    },
+    plugins: [
+          'karma-coverage',
+          'karma-chrome-launcher',
+          'karma-mocha',
+          'karma-sourcemap-loader',
+          'karma-webpack',
+          'karma-mocha-reporter',
+          'karma-chai',
+          'karma-babel-preprocessor'
+      ]
   })
 }

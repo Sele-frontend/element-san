@@ -25,6 +25,7 @@
   "dependencies": {
     "array-includes": "^3.0.3",
     "async-validator": "^1.8.2",
+    "babel-preset-airbnb": "^2.4.0",
     "babel-preset-es2017": "^6.24.1",
     "chai": "^4.1.2",
     "css-loader": "^0.28.11",
@@ -38,6 +39,7 @@
     "karma-chai": "^0.1.0",
     "karma-coverage": "^1.1.2",
     "karma-mocha-reporter": "^2.2.5",
+    "karma-webpack": "^3.0.0",
     "mini-css-extract-plugin": "^0.4.0",
     "mocha": "^5.1.1",
     "san": "^3.5.9",
