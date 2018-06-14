@@ -18,28 +18,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        "./specs/*.spec.js"
+        "./testEntry.js"
     ],
 
     preprocessors: {
-      "./specs/*.spec.js":['babel']
+        "./testEntry.js":['webpack','sourcemap']
     },
 
     // list of files / patterns to exclude
     exclude: [
     ],
-      babelPreprocessor: {
-          options: {
-              presets: ['env'],
-              sourceMap: 'inline'
-          },
-          filename: function (file) {
-              return file.originalPath.replace(/\.js$/, '.es5.js');
-          },
-          sourceFileName: function (file) {
-              return file.originalPath;
-          }
-      },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -84,7 +72,35 @@ module.exports = function(config) {
           { type: 'text-summary' }
       ]
     },
-    webpack:webpackConfig,
+    webpack: {
+        devtool: 'inline-source-map',
+        module: {
+            rules: [
+                {
+                    test: /\.san$/,
+                    loader: 'san-loader',
+                    exclude: /node_modules/
+                },
+                {
+                    test: /\.js?$/,
+                    loader: 'babel-loader',
+                    exclude: /node_modules/,
+                    query: {
+                        presets: ['es2015', 'stage-1']
+                    }
+                },
+                {
+                    test: /\.json$/,
+                    loader: 'json-loader'
+                }
+            ]
+        },
+        plugins: [
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': JSON.stringify('test')
+            })
+        ]
+    },
     webpackServer: {
               noInfo: true
     },
