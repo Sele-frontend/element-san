@@ -4,7 +4,7 @@ const webpackMerge = require('webpack-merge');
 const commonConfig = require('./webpack.common');
 
 module.exports = webpackMerge(commonConfig,{
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     module: {
         rules: [
             {
