@@ -3,7 +3,7 @@
 element for san (unofficial)
 ----------------------------------------
 <p align="center">
-![](https://www.travis-ci.org/Sele-frontend/element-san.svg?branch=master)
+  <a><img src="https://www.travis-ci.org/Sele-frontend/element-san.svg?branch=master"></a>
 </p>
 
 --------------------------------------
