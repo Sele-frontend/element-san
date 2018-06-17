@@ -2,7 +2,9 @@
 
 element for san (unofficial)
 ----------------------------------------
-![](https://www.travis-ci.org/Sele-frontend/element-san.svg?branch=master)
+<p align="center">
+  <a><img src="https://www.travis-ci.org/Sele-frontend/element-san.svg?branch=master"></a>
+</p>
 
 --------------------------------------
 ## 开发人员（按照拼音顺序排序）：
