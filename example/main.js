@@ -1,12 +1,11 @@
 import "../theme/common/common.less";
-import elementSan from "../dist/element-san.min.js";
-// import elCard from '../package/card/index.js';
-// import elIcon from '../package/icon/index.js';
-// import elButton from '../package/button/index.js';
-// import elInput from '../package/input/index';
-// import elInputNumber from '../package/input-number/index';
-console.log(elementSan)
-let {elCard, elIcon, elButton, elInput, elInputNumber} = elementSan;
+// import elementSan from "../dist/element-san.min.js";
+import elCard from '../package/card/index.js';
+import elIcon from '../package/icon/index.js';
+import elButton from '../package/button/index.js';
+import elInput from '../package/input/index';
+import elInputNumber from '../package/input-number/index';
+// let {elCard, elIcon, elButton, elInput, elInputNumber} = elementSan;
 
 import san from 'san';
 
