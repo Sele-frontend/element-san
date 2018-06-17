@@ -1,7 +1,4 @@
-# element-san
-
-element for san (unofficial)
-----------------------------------------
+# element-san (element for san (unofficial))
 <p align="center">
   <a><img src="https://www.travis-ci.org/Sele-frontend/element-san.svg?branch=master"></a>
 </p>
