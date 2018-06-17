@@ -1,5 +1,6 @@
 # element-san (element for san (unofficial))
 <p align="center">
+  <a><img src="https://img.shields.io/npm/v/element-san.svg?style=flat"></a>
   <a><img src="https://www.travis-ci.org/Sele-frontend/element-san.svg?branch=master"></a>
 </p>
 
