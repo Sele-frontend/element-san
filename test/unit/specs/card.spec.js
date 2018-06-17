@@ -30,7 +30,7 @@ describe("card structure", () => {
         expect(document.getElementsByTagName("el-card").length > 0).to.be.true;
     });
 
-    It("It should have shadow when hover,and should't have shadow when mouse out", () => {
+    it("It should have shadow when hover,and should't have shadow when mouse out", () => {
         var myComponent = san.defineComponent({
             template:`<div>
                           <el-card shadow="hover">

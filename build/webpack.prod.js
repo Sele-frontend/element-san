@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = webpackMerge(commonConfig,{
     mode: 'production',
-    devtool: 'source-map',
+    // devtool: 'source-map',
     entry: {
         app: path.resolve(__dirname, '../package/index.js'),
     },

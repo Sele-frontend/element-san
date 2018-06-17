@@ -18,8 +18,8 @@ module.exports = webpackMerge(commonConfig,{
             contentBase:path.resolve(__dirname,"../dist"),
             historyApiFallback:true,
             inline:true,
-            hot:true,//热加载
-            compress:true,//压缩
+            hot:true,   //  热加载
+            compress:true,  //  压缩
             watchOptions: {
                 ignored: /node_modules/
             }

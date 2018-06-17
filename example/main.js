@@ -1,10 +1,12 @@
 import "../theme/common/common.less";
-import elCard from '../package/card/index.js';
-import elIcon from '../package/icon/index.js';
-import elButton from '../package/button/index.js';
-import elInput from '../package/input/index';
-import elInputNumber from '../package/input-number/index';
-
+import elementSan from "../dist/element-san.min.js";
+// import elCard from '../package/card/index.js';
+// import elIcon from '../package/icon/index.js';
+// import elButton from '../package/button/index.js';
+// import elInput from '../package/input/index';
+// import elInputNumber from '../package/input-number/index';
+console.log(elementSan)
+let {elCard, elIcon, elButton, elInput, elInputNumber} = elementSan;
 
 import san from 'san';
 
@@ -25,7 +27,7 @@ let MyApp = san.defineComponent({
                         <el-input-number size="normal" step='0.002' max="100" precisionMode precision="3"></el-input-number>
                     <!--</div>-->
                     <!--<div style="height: 50px">-->
-                        <el-input-number size="normal" step='0.002' max="100" precisionMode precision="3"></el-input-number>
+                        <el-input-number size="normal" step='0.002' max="100" precisionMode precision="3" disabled="true"></el-input-number>
                     <!--</div>-->
             </div>`,
     components:{
