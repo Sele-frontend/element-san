@@ -5,6 +5,7 @@ import elIcon from '../package/icon/index.js';
 import elButton from '../package/button/index.js';
 import elInput from '../package/input/index';
 import elInputNumber from '../package/input-number/index';
+import elSwitch from '../package/switch/index';
 // let {elCard, elIcon, elButton, elInput, elInputNumber} = elementSan;
 
 import san from 'san';
@@ -22,12 +23,8 @@ let MyApp = san.defineComponent({
                 <el-button type="circle" color="#233352">嘤</el-button>
                 <el-input  placeholder="我是一个测试" prefixFlag="true" icon="search">
                 </el-input>
-                    <!--<div style="height: 50px">-->
-                        <el-input-number size="normal" step='0.002' max="100" precisionMode precision="3"></el-input-number>
-                    <!--</div>-->
-                    <!--<div style="height: 50px">-->
-                        <el-input-number size="normal" step='0.002' max="100" precisionMode precision="3" disabled="true"></el-input-number>
-                    <!--</div>-->
+                <el-input-number size="medium" step='0.002' max="100" precisionMode precision="3"></el-input-number>
+                <el-switch></el-switch>
             </div>`,
     components:{
         'el-card': elCard,
@@ -35,6 +32,7 @@ let MyApp = san.defineComponent({
         'el-button': elButton,
         'el-input': elInput,
         'el-input-number':elInputNumber,
+        'el-switch':elSwitch,
     },
     initData(){
         return {

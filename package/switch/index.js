@@ -1,3 +1,3 @@
-import switch from './src/switch.js';
+import elSwitch from './src/switch.js';
 
-export default switch;
+export default elSwitch;
