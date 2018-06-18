@@ -24,7 +24,7 @@ let MyApp = san.defineComponent({
                 <el-input  placeholder="我是一个测试" prefixFlag="true" icon="search">
                 </el-input>
                 <el-input-number size="medium" step='0.002' max="100" precisionMode precision="3"></el-input-number>
-                <el-switch></el-switch>
+                <el-switch activeColor="red"></el-switch>
             </div>`,
     components:{
         'el-card': elCard,
