@@ -1,4 +1,4 @@
-# element-san (element for san (unofficial))
+# ELEMENT-SAN
 <p align="center">
   <img src="https://camo.githubusercontent.com/a290f602d8248dd069fe4fc9eb7dfec86014183a/68747470733a2f2f62616964752e6769746875622e696f2f73616e2f696d672f6c6f676f2d636f6c6f7266756c2e737667" width="200px" height="200px" style="display:inline-block">
   
@@ -10,6 +10,10 @@
   <a><img src="https://img.shields.io/npm/v/element-san.svg?style=flat"></a>
   <a><img src="https://www.travis-ci.org/Sele-frontend/element-san.svg?branch=master"></a>
 </p>
+A San UI Tookit,idea from element.
+一个高质量的san组件库，移植自element
+正在紧锣密鼓的施工中
+
 ## 开发人员（按照拼音顺序排序）：
 
 | 姓名   | github                        |
