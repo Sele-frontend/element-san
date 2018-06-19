@@ -8,13 +8,6 @@
     vertical-align: middle;
     translate: all .2s;
 
-    &:disabled {
-        & .el-switch__core,
-        & .el-switch__label {
-            cursor:not-allowed;
-        }
-    }
-
     &:checked {
         .el-switch__core {
             border-color: @switch-on-color;
@@ -25,6 +18,14 @@
             }
         }
     }
+}
+
+.switch-is-disabled {
+     .el-switch__core,
+     .el-switch__label {
+        cursor:not-allowed;
+    }
+    opacity: 0.6;
 }
 
 .el-switch__input {
@@ -41,6 +42,7 @@
 
 .el-switch__core {
     margin:0;
+    transition: all 0.3s;
     display: inline-block;
     position: relative;
     width:@switch-width;
@@ -80,4 +82,18 @@
     &:active {
         color:@color-primary;
     }
+}
+
+.el-switch__label--left {
+    margin-right:10px;
+}
+
+.el-switch__label--right {
+    margin-left:10px;
+}
+
+.el-switch__label * {
+    line-height: 1;
+    font-size: 14px;
+    display: inline-block;
 }

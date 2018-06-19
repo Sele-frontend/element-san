@@ -3,16 +3,17 @@ export default defineComponent({
 
     template:`
         <div class="el-switch 
-                    {{disabled?'is-disabled':''}}
-                    {{checked?'is-checked':''}}"
+                    {{disabled?'switch-is-disabled':''}}
+                    {{checked?'switch-is-checked':''}}"
                     on-click="changeValue">
             <input class="el-switch__input"
                    type="checkbox"
                    on-change="handleChange"
                    value="{=value=}">
-            <span s-if="activeText" 
-                  class="el-switch__label--left">
-                  {{activeText}}
+            <span s-if="inactiveText" 
+                  class="el-switch__label--left"
+                  s-ref="leftLabel">
+                  {{inactiveText}}
             </span>
             <span class="el-switch__core" 
                   style="width:{{width}}px;" 
@@ -21,9 +22,10 @@ export default defineComponent({
                       s-ref="button">
                 </span>
             </span>
-            <span s-if="inactiveText" 
-                  class="el-switch__label--right">
-                  {{inactiveText}}
+            <span s-if="activeText" 
+                  class="el-switch__label--right"
+                  s-ref="rightLabel">
+                  {{activeText}}
             </span>
         </div>
     `,
@@ -51,8 +53,12 @@ export default defineComponent({
     changeColor (state) {
         if (state === false) {
             this.ref('core').style.background = this.data.get("inactiveColor");
+            this.ref('leftLabel').style.color = "rgb(64, 155, 255)";
+            this.ref('rightLabel').style.color = "";
         } else {
             this.ref('core').style.background = this.data.get("activeColor");
+            this.ref('leftLabel').style.color = "";
+            this.ref('rightLabel').style.color = "rgb(64, 155, 255)";
         }
     },
     hasText () {
@@ -64,7 +70,8 @@ export default defineComponent({
             return false;
         }
     },
-    inited () {
+    attached () {
+        this.changeColor(this.data.get('checked'));
         this.watch('checked', function (value) {
             if (value === false) {
                 this.ref('button').style.transform = "";    
