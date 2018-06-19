@@ -9,6 +9,7 @@ export default defineComponent({
             <input class="el-switch__input"
                    type="checkbox"
                    on-change="handleChange"
+                   name="{=name=}"
                    value="{=value=}">
             <span s-if="inactiveText" 
                   class="el-switch__label--left"
@@ -39,6 +40,9 @@ export default defineComponent({
             inactiveColor:'#C0CCDA',   //  switch inactive时的背景颜色,默认为#C0CCDA
             activeText:'',  //  switch Active时的文字，默认为空
             inactiveText:'',    //  switch inactive时的文字，默认为空
+            activeValue:true,   //  switch打开时的值，默认为true
+            inactiveValue:false,    //  switch关闭时的值，默认为false
+            name:'',    //  switch对应的name
         }
     },
     handleChange () {
@@ -48,6 +52,11 @@ export default defineComponent({
         if (!this.data.get('disabled')) {
             const state = this.data.get('checked');
             this.data.set('checked', !state);
+            if(state === true) {
+                this.data.set('value', this.data.get('activeValue'));
+            } else {
+                this.data.set('value', this.data.get('inactiveValue'));
+            }
         }
     },
     changeColor (state) {
@@ -72,9 +81,15 @@ export default defineComponent({
     },
     attached () {
         this.changeColor(this.data.get('checked'));
+        const state = this.data.get('checked');
+        if (state === true) {
+            this.data.set('value', this.data.get('activeValue'));
+        } else {
+            this.data.set('value', this.data.get('inactiveValue')); 
+        }
         this.watch('checked', function (value) {
             if (value === false) {
-                this.ref('button').style.transform = "";    
+                this.ref('button').style.transform = "";   
             } else {
                 this.ref('button').style.transform = `translate3d(${this.data.get('width') - 20}px,0px,0px)`;
             }

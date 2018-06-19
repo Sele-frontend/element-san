@@ -19,3 +19,6 @@ import elSwitch from '../package/switch/index.js';
 | inactiveText | type:string | switch关闭时的文字描述 |
 | activeColor | type:string | switch打开时的背景色 |
 | inactiveColor | type:string | switch关闭时的背景色 |
+| activeValue  |  type:string | switch打开时的value  |
+| inactiveValue  |  type:string | switch关闭时的value  |
+| name  | type:name | switch对应的name属性 |
