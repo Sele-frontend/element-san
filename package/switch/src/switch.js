@@ -52,7 +52,7 @@ export default defineComponent({
         if (!this.data.get('disabled')) {
             const state = this.data.get('checked');
             this.data.set('checked', !state);
-            if(state === true) {
+            if(!state === true) {
                 this.data.set('value', this.data.get('activeValue'));
             } else {
                 this.data.set('value', this.data.get('inactiveValue'));
