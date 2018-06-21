@@ -66,5 +66,5 @@ export default {
 | input  | 完成部分 | 崔晋瑜  |
 | radio |  开发中 | 徐帅武  |
 | input-number | 完成 | 崔晋瑜 |
-| switch  | 完成部分 | 崔晋瑜  |
+| switch  | 完成 | 崔晋瑜  |
 
