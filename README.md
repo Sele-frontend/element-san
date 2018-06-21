@@ -15,6 +15,35 @@ A San UI Tookit,idea from element.
 
 正在紧锣密鼓的施工中
 
+## 如何使用
+
+1.通过npm安装
+```
+npm install element-san --save
+```
+2.按需引入组件
+```
+<template>
+<div>
+    <el-input></el-input>
+</div>
+</template>
+<script>
+import elementSan from 'element-san';
+const elInput = elementSan.elInput;
+
+export default {
+    components: {
+        'el-input': elInput,
+    }
+};
+</script>
+```
+
+## 组件说明文档
+
+完整的组件文档暂时还没有完成，在各个组件文件夹下有各个组件的说明文档，package文件夹下是各个组件
+
 ## 开发人员（按照拼音顺序排序）：
 
 | 姓名   | github                        |
