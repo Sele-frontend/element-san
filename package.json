@@ -1,6 +1,6 @@
 {
   "name": "element-san",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "element for san",
   "main": "./dist/element-san.min.js",
   "email": "c2510271615@gmail.com",
