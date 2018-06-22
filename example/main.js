@@ -1,4 +1,5 @@
 import "../theme/common/common.less";
+// import { elCard, elIcon, elButton, elInput, elInputNumber, elSwitch} from  '../package/index';
 // import elementSan from "../dist/element-san.min.js";
 import elCard from '../package/card/index.js';
 import elIcon from '../package/icon/index.js';
@@ -6,6 +7,8 @@ import elButton from '../package/button/index.js';
 import elInput from '../package/input/index';
 import elInputNumber from '../package/input-number/index';
 import elSwitch from '../package/switch/index';
+import elRow from '../package/row/index';
+import elCol from '../package/col/index';
 // let {elCard, elIcon, elButton, elInput, elInputNumber} = elementSan;
 
 import san from 'san';
@@ -25,6 +28,14 @@ let MyApp = san.defineComponent({
                 </el-input>
                 <el-input-number size="medium" step='0.002' max="100" precisionMode precision="3"></el-input-number>
                 <el-switch activeText="打开" inactiveText="关闭" width="40"></el-switch>
+                <el-row>
+                    <el-col span="4">123</el-col>
+                    <el-col span="4">123</el-col>
+                    <el-col span="4">123</el-col>
+                    <el-col span="4">123</el-col>
+                    <el-col span="4">123</el-col>
+                    <el-col span="4">123</el-col>
+                </el-row>
             </div>`,
     components:{
         'el-card': elCard,
@@ -33,6 +44,8 @@ let MyApp = san.defineComponent({
         'el-input': elInput,
         'el-input-number':elInputNumber,
         'el-switch':elSwitch,
+        'el-row':elRow,
+        'el-col':elCol,
     },
     initData(){
         return {

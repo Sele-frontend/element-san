@@ -62,12 +62,16 @@ export default defineComponent({
     changeColor (state) {
         if (state === false) {
             this.ref('core').style.background = this.data.get("inactiveColor");
-            this.ref('leftLabel').style.color = "rgb(64, 155, 255)";
-            this.ref('rightLabel').style.color = "";
+            if (this.hasText()) {
+                this.ref('leftLabel').style.color = "rgb(64, 155, 255)";
+                this.ref('rightLabel').style.color = "";
+            }
         } else {
             this.ref('core').style.background = this.data.get("activeColor");
-            this.ref('leftLabel').style.color = "";
-            this.ref('rightLabel').style.color = "rgb(64, 155, 255)";
+            if (this.hasText()) {
+                this.ref('leftLabel').style.color = "";
+                this.ref('rightLabel').style.color = "rgb(64, 155, 255)";
+            }
         }
     },
     hasText () {
