@@ -1,0 +1,101 @@
+[class*="el-col-"] {
+    float: left;
+    box-sizing: border-box;
+}
+
+.el-col-0 {
+    display: none;
+}
+.loop(@count)when(@count < 24) {
+    .el-col-@{count} {
+        width:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-offset-@{count} {
+        margin-left:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-pull-@{count} {
+        position: relative;
+        right:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-push-@{count} {
+        position: relative;
+        left: (1 / 24 * @count * 100) * 1%;
+    }
+
+    .el-col-md-@{count} {
+        width:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-md-offset-@{count} {
+        margin-left:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-md-pull-@{count} {
+        position: relative;
+        right:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-md-push-@{count} {
+        position: relative;
+        left: (1 / 24 * @count * 100) * 1%;
+    }
+
+    .el-col-xs-@{count} {
+        width:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-xs-offset-@{count} {
+        margin-left:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-xs-pull-@{count} {
+        position: relative;
+        right:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-xs-push-@{count} {
+        position: relative;
+        left: (1 / 24 * @count * 100) * 1%;
+    }
+
+    .el-col-sm-@{count} {
+        width:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-sm-offset-@{count} {
+        margin-left:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-sm-pull-@{count} {
+        position: relative;
+        right:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-sm-push-@{count} {
+        position: relative;
+        left: (1 / 24 * @count * 100) * 1%;
+    }
+
+    .el-col-lg-@{count} {
+        width:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-lg-offset-@{count} {
+        margin-left:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-lg-pull-@{count} {
+        position: relative;
+        right:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-lg-push-@{count} {
+        position: relative;
+        left: (1 / 24 * @count * 100) * 1%;
+    }
+
+    .el-col-xl-@{count} {
+        width:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-xl-offset-@{count} {
+        margin-left:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-xl-pull-@{count} {
+        position: relative;
+        right:(1 / 24 * @count * 100) * 1%;
+    }
+    .el-col-xl-push-@{count} {
+        position: relative;
+        left: (1 / 24 * @count * 100) * 1%;
+    }
+    .loop(@count + 1)
+}
+.loop(1);

@@ -70,4 +70,6 @@ export default {
 | message | 开发中 | 崔晋瑜 |
 | form-item | 开发中 | 崔晋瑜 |
 | form | 开发中 | 崔晋瑜 |
+| row | 完成 | 崔晋瑜 |
+| col | 完成 | 崔晋瑜 |
 
