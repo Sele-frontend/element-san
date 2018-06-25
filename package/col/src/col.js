@@ -17,11 +17,16 @@ export default defineComponent({
         }
     },
     getClasses () {
+        const offset = this.data.get("offset");
+        const push = this.data.get("push");
+        const pull = this.data.get("pull");
+        const span = this.data.get("span");
         let classList = `el-col
-                         el-col-offset-${this.data.get("offset")}
-                         el-col-push-${this.data.get("push")}
-                         el-col-pull-${this.data.get("pull")}
-                         el-col-${this.data.get('span')}`;
+                         ${offset?'el-col-offset-'+offset:''}
+                         ${push?'el-col-push-'+push:''}
+                         ${pull?'el-col-pull-'+pull:''}
+                         ${span?'el-col-'+span:''}
+                         `;
         this.data.set("classes", classList);
     },
     attached () {
