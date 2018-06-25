@@ -1,4 +1,7 @@
 import {defineComponent} from 'san';
+import { transition } from 'san-transition';
+import schema from 'async-validator';
+
 export default defineComponent({
 
     template:`
@@ -11,19 +14,13 @@ export default defineComponent({
             </label>
             <div class="el-form-item__content" style="{=contentStyle=}">
             <slot></slot>
-            <transition name="el-zoom-in-top">
               <div
-                s-if="validateState === 'error' && showMessage && form.showMessage"
+                s-if="validateState === 'error' && showMessage"
                 class="el-form-item__error"
-                :class="{
-                  'el-form-item__error--inline': typeof inlineMessage === 'boolean'
-                    ? inlineMessage
-                    : (elForm && elForm.inlineMessage || false)
-                }"
+                s-transition="hook(el-zoom-in-top)"
               >
                 {{validateMessage}}
               </div>
-            </transition>
           </div>
         </div>
     `,
@@ -31,19 +28,45 @@ export default defineComponent({
         return {
             classes:'',
             validateState:'',
-            isRequired:'',
+            required:'',
             size:'',
             labelFor:'',
             inlineMessage:'',
             form:'',
+            prop:'',
+            rule:undefined,
+            validateMessage:'',
+            showMessage:true,
         }
     },
     created () {
-
+        this.getForm();
+        this.getFieldValue();
+        this.dispatch('el.Form.addField', this);
     },
     attached () {
         this.data.set('classes', this.getClasses());
-        this.getForm();
+        this.watch('validateState', function () {
+            this.data.set('classes', this.getClasses());
+        });
+    },
+    
+    /**
+     * get the value of the field
+     */
+    getFieldValue: function () {
+        const form = this.data.get('form');
+        let model;
+        try {
+            model = form.data.get('model');
+        } catch (e) {
+            console.warn(e);
+        }
+        const prop = this.data.get('prop');
+        if (!model || !prop) {
+            return ;
+        }
+        this.data.set('fieldValue', model[prop]);
     },
 
     /**
@@ -73,13 +96,70 @@ export default defineComponent({
         return classes;
     },
     getForm () {
-        this.data.set('form', this.parent.parent);
+        try {
+            if (this.parent.parent.el.classList[0] !== "el-form") {
+                throw "PLEASE PUT THE EL-FORM-ITEM IN EL-FORM";
+            }
+            this.data.set('form', this.parent.parent);
+        } catch (e) {
+            console.warn(e);
+        }
     },
     reset () {
 
     },
+    validate () {
+
+        //  if there is not any rules , just return.
+        const rule = this.getRules();
+        const value = this.getFieldValue();
+        const requiredState = this.data.get("required");
+        if (rule === undefined) {
+            return ;
+        }
+        this.data.set('validateState', "validating");
+        if (requiredState == true) {
+            if (value == '') {
+                this.data.set('validateState', 'error');
+            }
+        }
+        const label = this.data.get('prop');
+        let descriptor = {};
+        descriptor[label] = rule;
+        let validator = new schema(descriptor),
+            input = {};
+        input[label] = value;
+
+        validator.validate(input, (error) => {
+            if (error) {
+                this.data.set('validateState', 'error');
+                console.log('error');
+            } else {
+                this.data.set('validateState', 'success');
+                console.log('success');
+            }
+        })
+    },
     disposed () {
         this.dispatch("el.form.removeField", this);
-    }
+    },
+    getRules () {
+        let rules;
+        const prop = this.data.get('prop');
+        if (!prop) {
+            return undefined;
+        }
+        try {
+            if ( (rules = this.data.get('rule')) != undefined ) {
+                return rules;
+            } else if ( (rules = this.data.get('form').data.get('rules'))[prop] != undefined ) {
+                return rules;
+            }
+            return undefined;
+        } catch (e) {
+            console.error(e);
+        }
+    },
+    hook:transition,
 
 })

@@ -1,1 +1,99 @@
-@import 'common/var';
+.el-form {
+    .el-form--label-left {
+        & .el-form-item__label {
+            text-align: left;
+        }
+    }
+    .el-form--label-right {
+        & .el-form-item__label {
+            text-align: right;
+        }
+    }
+    .el-form--label-top {
+        & .el-form-item__label {
+            float:none;
+            display: inline-block;
+            text-align: left;
+            padding: 0 0 10px 0;   
+        }
+    }
+}
+
+.el-form-item {
+    margin-bottom:22px;
+    // clear fix
+
+    & .el-form-item {
+        margin-bottom:0;
+    }
+
+    & .el-input__validateIcon {
+        display: none;
+    }
+
+    .el-form-item--medium {
+        .el-form-item__label {
+            line-height: 36px;
+        }
+        .el-form-item__content {
+            line-height: 36px;
+        }
+    }
+
+    .el-form-item--small {
+        .el-form-item__label {
+            line-height: 32px;
+        }
+        .el-form-item__content {
+            line-height: 32px;
+        }
+        &.el-form-item {
+            margin-bottom: 18px;
+          }
+        .el-form-item__error {
+            padding-top: 2px;
+        }
+    }
+
+    .el-form-item--mini {
+        .el-form-item__label {
+            line-height: 28px;
+          }
+          .el-form-item__content {
+            line-height: 28px;
+          }
+          &.el-form-item {
+            margin-bottom: 18px;
+          }
+          .el-form-item__error {
+            padding-top: 1px;
+          }
+    }
+
+    .el-form-label {
+        text-align: right;
+        vertical-align: middle;
+        float:left;
+        font-size:14px;
+        color:@color-text-regular;
+        line-height: 40px;
+        padding:0 12px 0 0;
+        box-sizing:border-box;
+    }
+
+    .el-form-content {
+        line-height: 40px;
+        position: relative;
+        font-size:14px;
+
+        //  clear fix
+
+        .el-input-group {
+            vertical-align: middle;
+        }
+    }
+
+    .el-form-error {
+        
+    }
+}
