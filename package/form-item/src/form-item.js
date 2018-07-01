@@ -10,7 +10,7 @@ export default defineComponent({
                    class="el-form-item__label" 
                    style="{=labelStyle=}" 
                    s-if="label">
-                <slot name="label">{{label + form.labelSuffix}}</slot>
+                <slot name="label">{{label}}</slot>
             </label>
             <div class="el-form-item__content" style="{=contentStyle=}">
             <slot></slot>
@@ -37,6 +37,7 @@ export default defineComponent({
             rule:undefined,
             validateMessage:'',
             showMessage:true,
+            inputArray:[],
         }
     },
     created () {
@@ -67,6 +68,18 @@ export default defineComponent({
             return ;
         }
         this.data.set('fieldValue', model[prop]);
+    },
+
+    clearField: function () {
+        const form = this.data.get('form');
+        const prop = this.data.get('prop');
+        if (prop !== "") {
+            form.data.set(`model['${prop}']`, '');
+        } else {
+            this.data.get('inputArray').forEach( (e) => {
+                e.data.set('value', '');
+            })
+        }
     },
 
     /**
@@ -106,7 +119,8 @@ export default defineComponent({
         }
     },
     reset () {
-
+        this.data.set('validateState', '');
+        this.clearField();
     },
     validate () {
 
@@ -127,7 +141,7 @@ export default defineComponent({
         let descriptor = {};
         descriptor[label] = rule;
         let validator = new schema(descriptor),
-            input = {};
+        input = {};
         input[label] = value;
 
         validator.validate(input, (error) => {
@@ -161,5 +175,9 @@ export default defineComponent({
         }
     },
     hook:transition,
-
+    messages:{
+        'el.input.addInputItem':function (e) {
+            this.data.push('inputArray', e.value);
+        }
+    }
 })

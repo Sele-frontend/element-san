@@ -33,11 +33,15 @@ let MyApp = san.defineComponent({
                 <el-row>
                     <el-col span="4">
                         <el-form model="{=model=}" s-ref="form">
-                            <el-form-item prop="mobile" rule="{{ruleMobile}}">
+                            <el-form-item prop="mobile" rule="{{ruleMobile}}" s-ref="item" label="手机号码">
                                 <el-input value="{=model.mobile=}"></el-input>
+                            </el-form-item>
+                            <el-form-item prop="name" s-ref="item" label="姓名">
+                                <el-input value="{=model.name=}"></el-input>
                             </el-form-item>
                             <el-form-item>
                                 <button on-click="validate">验证</button>
+                                <button on-click="reset">重置</button>
                             </el-form-item>
                         </el-form>
                     </el-col>
@@ -63,7 +67,8 @@ let MyApp = san.defineComponent({
     initData(){
         return {
             model:{
-                'mobile':1234
+                'mobile':1234,
+                'name':"test",
             },
             ruleMobile: [
                 {
@@ -93,6 +98,10 @@ let MyApp = san.defineComponent({
     validate () {
         this.ref('form').validate();
         return false;
+    },
+
+    reset () {
+        this.ref('form').resetField();
     }
 });
 

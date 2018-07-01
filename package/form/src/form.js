@@ -2,13 +2,13 @@ import {defineComponent} from 'san';
 export default defineComponent({
 
     template:`
-        <form class="el-form {{labelPosition?'el-form--label-'+labelPosition:''}}">
+        <div class="el-form {{labelPosition?'el-form--label-'+labelPosition:''}}">
             <slot></slot>
-        </form>
+        </div>
     `,
     initData() {
         return {
-            formModel:undefined,
+            model:undefined,
             formItem:[],
             labelWidth:'100px',
             rules:{},
@@ -39,18 +39,25 @@ export default defineComponent({
             ele.reset();
         })
     },
-    async validate (callback) {
+    validate (callback) {
         /**
          *
          * 表单验证
          *
          */
-        await this.data.get('formItem').forEach(ele=>{
+        let count = 0;
+        this.data.get('formItem').forEach( (ele) => {
+            if ( ele.getRules() !== undefined){
+                count ++;
+            }
+        })
+        let count_2 = 0;
+        this.data.get('formItem').forEach(ele=>{
            ele.validate();
+           count_2 ++;
+           if (count_2 == count) {
+               callback();
+           }
         });
-
-        let valid = this.data.get('valid');
-
-        callback.call(this,valid);
     }
 })

@@ -78,6 +78,9 @@ export default defineComponent({
             this.data.set("appendFlag",false);
         }
     },
+    created () {
+        
+    },
     handleClick(e) {
         this.fire(e);
     },
