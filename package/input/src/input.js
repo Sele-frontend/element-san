@@ -77,6 +77,7 @@ export default defineComponent({
         if(!slotUtil.hasSlot(this,"append")) {
             this.data.set("appendFlag",false);
         }
+        this.dispatch("el.input.addInputItem", this);
     },
     created () {
         

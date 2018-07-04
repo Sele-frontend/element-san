@@ -50,6 +50,14 @@ export default defineComponent({
         this.watch('validateState', function () {
             this.data.set('classes', this.getClasses());
         });
+        this.watch('size', function () {
+            this.data.set('classes', this.getClasses());
+            const size = this.data.get('size');
+            this.data.get("inputArray").forEach(function (ele) {
+                ele.data.set('size', size);
+                console.log(ele.data.get('size'));
+            })
+        })
     },
     
     /**
@@ -78,7 +86,7 @@ export default defineComponent({
         } else {
             this.data.get('inputArray').forEach( (e) => {
                 e.data.set('value', '');
-            })
+            });
         }
     },
 
