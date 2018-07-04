@@ -24,6 +24,10 @@ export default defineComponent({
                 ele.data.set('labelWidth', this.data.get('labelWidth'));
             }
         });
+        const size = this.data.get('size');
+        this.data.get("formItem").forEach( (ele) => {
+            ele.data.set('size', size);
+        })
     },
     messages:{
         'el.Form.addField':function (message) {
@@ -56,7 +60,9 @@ export default defineComponent({
            ele.validate();
            count_2 ++;
            if (count_2 == count) {
-               callback();
+               if (typeof callback === "function"){
+                    callback(); //  如果有回调函数，那么调用回调
+               }
            }
         });
     }

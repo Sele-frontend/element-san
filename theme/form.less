@@ -1,3 +1,4 @@
+@import "common/mixin.less";
 .el-form {
     .el-form--label-left {
         & .el-form-item__label {
@@ -19,9 +20,10 @@
     }
 }
 
-.el-form-item {
+.el-form {
     margin-bottom:22px;
     // clear fix
+    .clearfix();
 
     & .el-form-item {
         margin-bottom:0;
@@ -87,6 +89,7 @@
         font-size:14px;
 
         //  clear fix
+        .clearfix();
 
         .el-input-group {
             vertical-align: middle;

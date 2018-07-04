@@ -26,13 +26,13 @@ let MyApp = san.defineComponent({
                 <el-button type="standard">按钮</el-button>
                 <el-button type="lovely" color="red">按钮</el-button>
                 <el-button type="circle" color="#233352">嘤</el-button>
-                <el-input  placeholder="我是一个测试" prefixFlag="true" icon="search">
+                <el-input  placeholder="我是一个测试" prefixFlag="true" icon="search" size="small">
                 </el-input>
-                <el-input-number size="medium" step='0.002' max="100" precisionMode precision="3"></el-input-number>
+                <el-input-number size="small" step='0.002' max="100" precisionMode precision="3"></el-input-number>
                 <el-switch activeText="打开" inactiveText="关闭" width="40"></el-switch>
                 <el-row>
                     <el-col span="4">
-                        <el-form model="{=model=}" s-ref="form">
+                        <el-form model="{=model=}" s-ref="form" size="small">
                             <el-form-item prop="mobile" rule="{{ruleMobile}}" s-ref="item" label="手机号码">
                                 <el-input value="{=model.mobile=}"></el-input>
                             </el-form-item>
