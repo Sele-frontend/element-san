@@ -17,7 +17,7 @@ export default defineComponent({
               <div
                 s-if="validateState === 'error' && showMessage"
                 class="el-form-item__error"
-                s-transition="hook(el-zoom-in-top)"
+                s-transition="hook('el-zoom-in-top')"
               >
                 {{validateMessage}}
               </div>
