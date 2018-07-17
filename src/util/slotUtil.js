@@ -6,7 +6,7 @@ export default {
      * @param slotName
      * @returns {boolean}
      */
-    hasSlot(el,slotName) {
-        return el.slot(slotName)[0].children.length>0;
+    hasSlot (el, slotName) {
+        return el.slot(slotName)[0].children.length > 0;
     }
 }

@@ -22,6 +22,7 @@ const elementSan = {
     elRow,
     elCol,
     elFormItem,
+    elDialog
 };
 
 export default elementSan;

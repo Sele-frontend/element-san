@@ -32,7 +32,7 @@ let MyApp = san.defineComponent({
                 <el-switch activeText="打开" inactiveText="关闭" width="40"></el-switch>
                 <el-row>
                     <el-col span="4">
-                        <el-form model="{=model=}" s-ref="form" size="small">
+                        <el-form model="{=model=}" s-ref="form" size="medium">
                             <el-form-item prop="mobile" rule="{{ruleMobile}}" s-ref="item" label="手机号码">
                                 <el-input value="{=model.mobile=}"></el-input>
                             </el-form-item>
@@ -104,6 +104,5 @@ let MyApp = san.defineComponent({
         this.ref('form').resetField();
     }
 });
-
 let myApp = new MyApp();
 myApp.attach(document.getElementById("app"));
